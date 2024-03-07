@@ -16,3 +16,4 @@ RUN apk update && \
 
 RUN echo "cd /sourcecode" >> /config/.profile
 COPY ./scripts/run /config/run
+RUN chmod 777 /config/run
