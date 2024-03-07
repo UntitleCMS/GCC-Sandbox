@@ -1,4 +1,5 @@
 FROM linuxserver/openssh-server:latest
+LABEL org.opencontainers.image.source = "https://github.com/UntitleCMS/GCC-Sandbox"
 
 ENV PUBLIC_KEY_FILE=/config/authorized_keys
 ENV PUID=1000
