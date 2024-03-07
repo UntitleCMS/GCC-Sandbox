@@ -9,6 +9,5 @@ services:
     volumes:
       - ./code:/sourcecode
       - ./config/authorized_keys:/config/authorized_keys
-      - ./scripts/run:/config/run
     ports:
       - "7777:2222"

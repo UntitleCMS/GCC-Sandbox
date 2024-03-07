@@ -15,3 +15,4 @@ RUN apk update && \
     apk add --no-cache gcc make musl-dev linux-headers libgcc g++ libc-dev cpulimit
 
 RUN echo "cd /sourcecode" >> /config/.profile
+COPY ./scripts/run /config/run
