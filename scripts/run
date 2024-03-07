@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Check if the source file is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <source_file.c>"
+    exit 1
+fi
+
+# Compile the C program
+if ! gcc -o "/sourcecode/.$1.out" "/sourcecode/$1"; then
+    echo "Compilation failed"
+    exit 1
+fi
+
+
+# Set maximum virtual memory size to 5MB (5242880 bytes)
+ulimit -Sv 5242880
+
+# Run the program with CPU limit and timeout
+cpulimit -l 20 stdbuf -o0 /sourcecode/.$1.out
